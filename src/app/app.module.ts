@@ -11,6 +11,8 @@ import { GameSetupComponent } from './game-setup/game-setup.component';
 import { ButtonModule } from 'primeng/button';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { FieldsetModule } from 'primeng/fieldset';
+import { DropdownModule } from 'primeng/dropdown';
+import { DividerModule } from 'primeng/divider';
 
 @NgModule({
   declarations: [AppComponent, PubIntroComponent, GameSetupComponent],
@@ -23,6 +25,8 @@ import { FieldsetModule } from 'primeng/fieldset';
     ButtonModule,
     InputNumberModule,
     FieldsetModule,
+    DropdownModule,
+    DividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

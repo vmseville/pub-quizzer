@@ -1,67 +1,90 @@
-<div class="flex flex-column pmx8">
-  <div class="flex align-items-center justify-content-center">
-    <h3 class="pmx8 text-center">Game Setup Here</h3>
-  </div>
-  <div
-    class="flex px-6 mx-6 align-items-center justify-content-center"
-    [formGroup]="setupForm"
-  >
-    <p-fieldset legend="Number of Questions per Round">
-      <div class="grid" formGroupName="numberOfQuestions">
-        <div class="col">
-          <label for="easy" class="block">Easy</label>
-          <br />
-          <p-inputNumber
-            formControlName="easy"
-            [showButtons]="true"
-            buttonLayout="vertical"
-            spinnerMode="vertical"
-            inputId="easy"
-            [min]="1"
-            [max]="10"
-            decrementButtonClass="p-button-primary"
-            incrementButtonClass="p-button-primary"
-            incrementButtonIcon="pi pi-plus"
-            decrementButtonIcon="pi pi-minus"
-          >
-          </p-inputNumber>
+<div class="flex flex-column pmx8" [formGroup]="setupForm">
+  <div class="pmx8">
+    <p-fieldset legend="Game Setup">
+      <p-divider align="center" type="dashed">
+        <b>Number of Questions per Round</b>
+      </p-divider>
+      <div class="flex px-4 mx-4 align-items-center justify-content-center">
+        <div class="flex flex-row" formGroupName="numberOfQuestions">
+          <div class="col">
+            <label for="easy" class="block">Easy</label>
+            <br />
+            <p-inputNumber
+              formControlName="easy"
+              [showButtons]="true"
+              buttonLayout="vertical"
+              spinnerMode="vertical"
+              inputId="easy"
+              [min]="1"
+              [max]="10"
+              decrementButtonClass="p-button-primary"
+              incrementButtonClass="p-button-primary"
+              incrementButtonIcon="pi pi-plus"
+              decrementButtonIcon="pi pi-minus"
+            >
+            </p-inputNumber>
+          </div>
+          <div class="col">
+            <label for="medium" style="display: block">Medium</label>
+            <br />
+            <p-inputNumber
+              formControlName="medium"
+              [showButtons]="true"
+              buttonLayout="vertical"
+              spinnerMode="vertical"
+              inputId="medium"
+              [min]="1"
+              [max]="10"
+              decrementButtonClass="p-button-primary"
+              incrementButtonClass="p-button-primary"
+              incrementButtonIcon="pi pi-plus"
+              decrementButtonIcon="pi pi-minus"
+            >
+            </p-inputNumber>
+          </div>
+          <div class="col">
+            <label for="hard" style="display: block">Hard</label>
+            <br />
+            <p-inputNumber
+              formControlName="hard"
+              [showButtons]="true"
+              buttonLayout="vertical"
+              spinnerMode="vertical"
+              inputId="hard"
+              [min]="1"
+              [max]="10"
+              decrementButtonClass="p-button-primary"
+              incrementButtonClass="p-button-primary"
+              incrementButtonIcon="pi pi-plus"
+              decrementButtonIcon="pi pi-minus"
+            >
+            </p-inputNumber>
+          </div>
         </div>
-        <div class="col">
-          <label for="medium" style="display: block">Medium</label>
-          <br />
-          <p-inputNumber
-            formControlName="medium"
-            [showButtons]="true"
-            buttonLayout="vertical"
-            spinnerMode="vertical"
-            inputId="medium"
-            [min]="1"
-            [max]="10"
-            decrementButtonClass="p-button-primary"
-            incrementButtonClass="p-button-primary"
-            incrementButtonIcon="pi pi-plus"
-            decrementButtonIcon="pi pi-minus"
-          >
-          </p-inputNumber>
-        </div>
-        <div class="col">
-          <label for="hard" style="display: block">Hard</label>
-          <br />
-          <p-inputNumber
-            formControlName="hard"
-            [showButtons]="true"
-            buttonLayout="vertical"
-            spinnerMode="vertical"
-            inputId="hard"
-            [min]="1"
-            [max]="10"
-            decrementButtonClass="p-button-primary"
-            incrementButtonClass="p-button-primary"
-            incrementButtonIcon="pi pi-plus"
-            decrementButtonIcon="pi pi-minus"
-          >
-          </p-inputNumber>
-        </div>
+      </div>
+      <p-divider align="center" type="dashed">
+        <b>Choose a Category</b>
+      </p-divider>
+      <div class="flex m-2 align-items-center justify-content-center">
+        <p-dropdown
+          [options]="categories"
+          formControlName="categories"
+          optionLabel="name"
+          optionValue="value"
+          placeholder="Select a Category"
+        ></p-dropdown>
+      </div>
+      <p-divider align="center" type="dashed">
+        <b>Question Type</b>
+      </p-divider>
+      <div class="flex m-2 align-items-center justify-content-center">
+        <p-dropdown
+          [options]="questionTypes"
+          formControlName="questionTypes"
+          optionLabel="name"
+          optionValue="value"
+          placeholder="Select Question Type"
+        ></p-dropdown>
       </div>
     </p-fieldset>
   </div>
