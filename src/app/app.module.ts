@@ -15,9 +15,10 @@ import { FieldsetModule } from 'primeng/fieldset';
 import { DropdownModule } from 'primeng/dropdown';
 import { DividerModule } from 'primeng/divider';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { GameStageComponent } from './game-stage/game-stage.component';
 
 @NgModule({
-  declarations: [AppComponent, PubIntroComponent, GameSetupComponent],
+  declarations: [AppComponent, PubIntroComponent, GameSetupComponent, GameStageComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
