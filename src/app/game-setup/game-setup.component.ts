@@ -6,6 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { GameSettingsService } from '../game-settings.service';
 import { OpenTriviaService } from '../open-trivia.service';
 import { Settings } from '../shared/models/settings';
@@ -26,7 +27,8 @@ export class GameSetupComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private gameSettingsService: GameSettingsService,
-    private openTriviaService: OpenTriviaService
+    private openTriviaService: OpenTriviaService,
+    private router: Router
   ) {
     this.setupForm = this.formBuilder.group({
       numberOfQuestions: this.formBuilder.group({
@@ -57,5 +59,6 @@ export class GameSetupComponent implements OnInit {
       .subscribe((questionSet) => {
         console.log(`SET: ${JSON.stringify(questionSet)}`);
       });
+    this.router.navigateByUrl('/game');
   }
 }
