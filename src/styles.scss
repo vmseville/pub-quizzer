@@ -20,3 +20,7 @@ body {
 .pmx2 {
   @include styleclass("px-2 mx-2");
 }
+
+.game-border {
+  @include styleclass("border-solid border-round border-yellow-400");
+}

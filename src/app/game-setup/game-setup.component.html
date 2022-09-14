@@ -67,24 +67,44 @@
       </p-divider>
       <div class="flex m-2 align-items-center justify-content-center">
         <p-dropdown
-          [options]="categories"
+          [options]="categoriesOptions"
           formControlName="categories"
           optionLabel="name"
           optionValue="value"
           placeholder="Select a Category"
         ></p-dropdown>
+        <!-- <p-multiSelect
+          [options]="categoriesOptions"
+          formControlName="categories"
+          display="chip"
+          optionLabel="name"
+          optionValue="value"
+          placeholder="Select categories to include"
+        ></p-multiSelect> -->
       </div>
       <p-divider align="center" type="dashed">
         <b>Question Type</b>
       </p-divider>
       <div class="flex m-2 align-items-center justify-content-center">
         <p-dropdown
-          [options]="questionTypes"
+          [options]="questionTypesOptions"
           formControlName="questionTypes"
           optionLabel="name"
           optionValue="value"
           placeholder="Select Question Type"
         ></p-dropdown>
+      </div>
+      <p-divider align="center"> </p-divider>
+      <div class="flex align-items-center justify-content-center">
+        <button
+          pButton
+          type="button"
+          label="Start Game"
+          icon="pi pi-check"
+          class="p-button-lg"
+          [disabled]="setupForm.invalid"
+          (click)="saveSettings()"
+        ></button>
       </div>
     </p-fieldset>
   </div>
