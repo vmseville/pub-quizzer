@@ -16,9 +16,10 @@ import { DropdownModule } from 'primeng/dropdown';
 import { DividerModule } from 'primeng/divider';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { GameStageComponent } from './game-stage/game-stage.component';
+import { QuestionCardComponent } from './game-stage/question-card/question-card.component';
 
 @NgModule({
-  declarations: [AppComponent, PubIntroComponent, GameSetupComponent, GameStageComponent],
+  declarations: [AppComponent, PubIntroComponent, GameSetupComponent, GameStageComponent, QuestionCardComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
