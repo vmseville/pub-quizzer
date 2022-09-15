@@ -1,17 +1,31 @@
 import { Injectable } from '@angular/core';
 import { OpenTriviaService } from './open-trivia.service';
+import { QuestionSet } from './shared/models/question';
 import { Settings } from './shared/models/settings';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GameSettingsService {
-  gameSettings: Settings;
+  private _gameSettings: Settings;
+  private _questionSet: QuestionSet;
 
   constructor(private openTrivaService: OpenTriviaService) {}
 
-  setGameSettings(settings: Settings) {
-    this.gameSettings = settings;
+  get gameSettings(): Settings {
+    return this._gameSettings;
+  }
+
+  set gameSettings(settings: Settings) {
+    this._gameSettings = settings;
+  }
+
+  get questionSet(): QuestionSet {
+    return this._questionSet;
+  }
+
+  set questionSet(questionSet: QuestionSet) {
+    this._questionSet = questionSet;
   }
 
   clearGameSettings() {

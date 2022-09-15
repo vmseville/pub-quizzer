@@ -53,12 +53,12 @@ export class GameSetupComponent implements OnInit {
   }
 
   saveSettings() {
-    this.gameSettingsService.setGameSettings(this.settings);
+    this.gameSettingsService.gameSettings = this.settings;
     this.openTriviaService
       .getQuestionSet(this.settings)
       .subscribe((questionSet) => {
-        console.log(`SET: ${JSON.stringify(questionSet)}`);
+        this.gameSettingsService.questionSet = questionSet;
+        this.router.navigateByUrl('/game');
       });
-    this.router.navigateByUrl('/game');
   }
 }
