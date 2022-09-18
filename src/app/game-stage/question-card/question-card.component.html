@@ -1,1 +1,5 @@
-<p>question-card works!</p>
+<div *ngIf="question; else noQuestion">{{ question.question }}</div>
+
+<ng-template #noQuestion>
+  <div><span>Loading Question...</span></div>
+</ng-template>

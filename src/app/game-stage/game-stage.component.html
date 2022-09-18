@@ -3,8 +3,19 @@
     <div class="col-4 game-border m-2 surface-ground">
       In game configurations
     </div>
-    <div class="col game-border m-2 surface-ground">
-      <qzr-question-card></qzr-question-card>
+    <div class="col flex flex-column">
+      <div class="game-border m-2 p-2">
+        <qzr-question-card [question]="currentQuestion"></qzr-question-card>
+      </div>
+      <div class="m-2 flex justify-content-end">
+        <button
+          pButton
+          type="button"
+          label="Next"
+          class="p-button"
+          (click)="next()"
+        ></button>
+      </div>
     </div>
   </div>
   <div class="grid game-border m-2 surface-ground">
